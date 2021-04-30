@@ -3,6 +3,8 @@ import "./App.css";
 import { useState } from "react";
 
 import Header from "./Components/Header";
+import AddCounterButton from "./Components/AddCounterButton";
+import Button from "./Components/Button";
 import Footer from "./Components/Footer";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -10,50 +12,45 @@ import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
 library.add(faStopwatch);
 
 function App() {
-  const [counter, setCounter] = useState([0, 1]);
+  const [counter, setCounter] = useState([0]);
 
   return (
     <div className="container">
       <Header />
       <main>
-        <button
-          onClick={() => {
-            const newTab = [...counter];
-            newTab.push(0);
-            setCounter(newTab);
-          }}
-        >
-          Add Counter
-        </button>
-
-        {counter.map((elem, index) => {
-          return (
-            <div key={index}>
-              <button
-                onClick={() => {
-                  setCounter(elem - 1);
-                }}
-              >
-                -
-              </button>
-              <span>{elem}</span>
-              <button
-                onClick={() => {
-                  setCounter(elem + 1);
-                }}
-              >
-                +
-              </button>
-            </div>
-          );
-        })}
-        <button
-          onClick={() => {
-            setCounter(0);
-          }}
-        >
-          Reset
-        </button>
+        <AddCounterButton counter={counter} setCounter={setCounter} />
+        <div>
+          {counter.map((elem, index) => {
+            return (
+              <div className="counter-element" key={index}>
+                <div>
+                  <Button
+                    elem={elem}
+                    index={index}
+                    counter={counter}
+                    setCounter={setCounter}
+                    role={"-"}
+                  />
+                  <span>{elem}</span>
+                  <Button
+                    elem={elem}
+                    index={index}
+                    counter={counter}
+                    setCounter={setCounter}
+                    role={"+"}
+                  />
+                </div>
+                <Button
+                  elem={elem}
+                  index={index}
+                  counter={counter}
+                  setCounter={setCounter}
+                  role={"Reset"}
+                />
+              </div>
+            );
+          })}
+        </div>
       </main>
       <Footer />
     </div>
