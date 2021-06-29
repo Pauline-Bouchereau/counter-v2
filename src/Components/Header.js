@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
       <FontAwesomeIcon icon="stopwatch" className="stopwatch" />
-      <h1>React Counter V2</h1>
+      <h1>React Counter(s) !</h1>
     </header>
   );
 };
