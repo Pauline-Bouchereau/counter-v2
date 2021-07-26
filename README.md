@@ -6,11 +6,11 @@
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/80970440/123827509-f941d280-d900-11eb-8007-1219e95e82eb.gif)
 
-_Made in 2021 @ Le Reacteur_
+_Made in 2021 @ [Le Reacteur](https://www.lereacteur.io/)_
 
 ### ⚙️ Main functionalities :
 
-Counter that can be incremented, decremented or reset|| Add several, independant counters || Disabled buttons when the action is not permitted 
+Counter that can be incremented, decremented or reset || Add several, independant counters || Disabled buttons when the action is not permitted 
 
 ### 🔧 Stack
 
